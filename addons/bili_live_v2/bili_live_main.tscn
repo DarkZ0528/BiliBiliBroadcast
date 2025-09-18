@@ -1,0 +1,270 @@
+[gd_scene load_steps=19 format=3 uid="uid://dool6quoevo5x"]
+
+[ext_resource type="Texture2D" uid="uid://depqriag578ct" path="res://addons/bili_live_v2/LoginImage/titile.png" id="1_5gglb"]
+[ext_resource type="Script" uid="uid://bv8q86bdc1v6d" path="res://addons/bili_live_v2/bili_live_main.gd" id="1_kxc1a"]
+[ext_resource type="Texture2D" uid="uid://cbft8143nn4pf" path="res://addons/bili_live_v2/LoginImage/input_code.png" id="2_wo6ey"]
+[ext_resource type="Texture2D" uid="uid://b034mvcooha8w" path="res://addons/bili_live_v2/LoginImage/close_button_input.png" id="3_laopr"]
+[ext_resource type="Texture2D" uid="uid://2252q70koq8l" path="res://addons/bili_live_v2/LoginImage/problem.png" id="4_bju1p"]
+[ext_resource type="Texture2D" uid="uid://dico6pyrkw0i6" path="res://addons/bili_live_v2/LoginImage/start_button.png" id="5_w0g1n"]
+[ext_resource type="Texture2D" uid="uid://cfqhha783itpx" path="res://addons/bili_live_v2/LoginImage/bilibili_logo.png" id="6_2sbuy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fbhq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s44gy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ap4c0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4r266"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0mxo"]
+bg_color = Color(1, 0.4, 0.6, 0.290196)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rca8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h54yy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpbm6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rckce"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mv28"]
+texture = ExtResource("5_w0g1n")
+
+[sub_resource type="Theme" id="Theme_x4vna"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 12
+
+[node name="BiliLiveBox" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -125.0
+offset_right = 210.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kxc1a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(410, 260)
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 250.0
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Background" type="ColorRect" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="作者水印（别删除嗷）" type="Label" parent="ColorRect/MarginContainer/Background"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_top = -37.0
+offset_right = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.4, 0.6, 0.596078)
+theme_override_font_sizes/font_size = 12
+text = "作者：DarkZ
+哔哩互动直播插件-V2
+"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="水印（我就爱写中文）" type="TextureRect" parent="ColorRect/MarginContainer/Background"]
+custom_minimum_size = Vector2(132, 126)
+layout_mode = 0
+offset_top = 160.0
+offset_right = 132.0
+offset_bottom = 286.0
+texture = ExtResource("6_2sbuy")
+expand_mode = 1
+
+[node name="PreStartContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/Background"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TitleContainer" type="CenterContainer" parent="ColorRect/MarginContainer/Background/PreStartContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Title" type="TextureRect" parent="ColorRect/MarginContainer/Background/PreStartContainer/TitleContainer"]
+layout_mode = 2
+texture = ExtResource("1_5gglb")
+
+[node name="CodeContainer" type="CenterContainer" parent="ColorRect/MarginContainer/Background/PreStartContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/Background/PreStartContainer/CodeContainer"]
+layout_mode = 2
+texture = ExtResource("2_wo6ey")
+
+[node name="InputTip" type="Label" parent="ColorRect/MarginContainer/Background/PreStartContainer/CodeContainer/TextureRect"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "身份码"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CodeInput" type="TextEdit" parent="ColorRect/MarginContainer/Background/PreStartContainer/CodeContainer/TextureRect"]
+custom_minimum_size = Vector2(240, 30)
+layout_mode = 2
+offset_left = 67.0
+offset_top = 1.0
+offset_right = 307.0
+offset_bottom = 31.0
+theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.788235, 0.8, 0.815686, 1)
+theme_override_font_sizes/font_size = 12
+placeholder_text = "请输入身份码"
+
+[node name="CodeInputCleanBtn" type="Button" parent="ColorRect/MarginContainer/Background/PreStartContainer/CodeContainer/TextureRect"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 0
+offset_left = 285.0
+offset_top = 9.0
+offset_right = 300.0
+offset_bottom = 24.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fbhq6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s44gy")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ap4c0")
+icon = ExtResource("3_laopr")
+icon_alignment = 1
+expand_icon = true
+
+[node name="GetCodeContainer" type="CenterContainer" parent="ColorRect/MarginContainer/Background/PreStartContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/MarginContainer/Background/PreStartContainer/GetCodeContainer"]
+custom_minimum_size = Vector2(310, 20)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/MarginContainer/Background/PreStartContainer/GetCodeContainer/ColorRect"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 12.0
+texture = ExtResource("4_bju1p")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/Background/PreStartContainer/GetCodeContainer/ColorRect"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = -1.0
+offset_right = 155.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(0.788235, 0.8, 0.815686, 1)
+theme_override_font_sizes/font_size = 10
+text = "在获取推流地址处可获取身份码"
+
+[node name="Button" type="Button" parent="ColorRect/MarginContainer/Background/PreStartContainer/GetCodeContainer/ColorRect"]
+layout_mode = 0
+offset_left = 280.0
+offset_right = 310.0
+offset_bottom = 14.0
+theme_override_colors/font_hover_pressed_color = Color(1, 0.4, 0.6, 1)
+theme_override_colors/font_hover_color = Color(1, 0.4, 0.6, 1)
+theme_override_colors/font_color = Color(1, 0.4, 0.6, 1)
+theme_override_colors/font_focus_color = Color(1, 0.4, 0.6, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.4, 0.6, 1)
+theme_override_font_sizes/font_size = 10
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4r266")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n0mxo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1rca8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_h54yy")
+text = "去获取"
+
+[node name="StartGameContainer" type="CenterContainer" parent="ColorRect/MarginContainer/Background/PreStartContainer"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="StartBtn" type="Button" parent="ColorRect/MarginContainer/Background/PreStartContainer/StartGameContainer"]
+custom_minimum_size = Vector2(119, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xpbm6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rckce")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6mv28")
+text = "开启玩法"
+
+[node name="RunningContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/Background"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_x4vna")
+
+[node name="Title" type="Label" parent="ColorRect/MarginContainer/Background/RunningContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "互动直播-最新动态"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DamukScrollContainer" type="ScrollContainer" parent="ColorRect/MarginContainer/Background/RunningContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DamukContainer" type="VBoxContainer" parent="ColorRect/MarginContainer/Background/RunningContainer/DamukScrollContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(390, 0)
+layout_mode = 2
+theme = SubResource("Theme_x4vna")
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect/MarginContainer/Background/RunningContainer"]
+layout_mode = 2
+
+[node name="EndBtn" type="Button" parent="ColorRect/MarginContainer/Background/RunningContainer/CenterContainer"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/hover = SubResource("StyleBoxTexture_6mv28")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6mv28")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6mv28")
+text = "关闭玩法"
+
+[connection signal="resized" from="ColorRect/MarginContainer/Background/RunningContainer/DamukScrollContainer/DamukContainer" to="." method="_on_damuk_container_resized"]

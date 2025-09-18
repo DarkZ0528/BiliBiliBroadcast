@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=3 uid="uid://dool6quoevo5x"]
+
+[ext_resource type="Texture2D" uid="uid://depqriag578ct" path="res://addons/bili_live_v2/LoginImage/titile.png" id="1_5gglb"]
+[ext_resource type="Script" path="res://addons/bili_live_v2/bili_live_main.gd" id="1_kxc1a"]
+[ext_resource type="Texture2D" uid="uid://cbft8143nn4pf" path="res://addons/bili_live_v2/LoginImage/input_code.png" id="2_wo6ey"]
+[ext_resource type="Texture2D" uid="uid://b034mvcooha8w" path="res://addons/bili_live_v2/LoginImage/close_button_input.png" id="3_laopr"]
+[ext_resource type="Texture2D" uid="uid://2252q70koq8l" path="res://addons/bili_live_v2/LoginImage/problem.png" id="4_bju1p"]
+[ext_resource type="Texture2D" uid="uid://dico6pyrkw0i6" path="res://addons/bili_live_v2/LoginImage/start_button.png" id="5_w0g1n"]
+[ext_resource type="Texture2D" uid="uid://cfqhha783itpx" path="res://addons/bili_live_v2/LoginImage/bilibili_logo.png" id="6_2sbuy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ap4c0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ohpp5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mv28"]
+texture = ExtResource("5_w0g1n")
+
+[node name="Login" type="Control"]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -125.0
+offset_right = 200.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kxc1a")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="Title" type="TextureRect" parent="Background/VBoxContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("1_5gglb")
+
+[node name="CenterContainer2" type="CenterContainer" parent="Background/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background/VBoxContainer/CenterContainer2"]
+layout_mode = 2
+texture = ExtResource("2_wo6ey")
+
+[node name="InputTip" type="Label" parent="Background/VBoxContainer/CenterContainer2/TextureRect"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "身份码"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CodeInput" type="TextEdit" parent="Background/VBoxContainer/CenterContainer2/TextureRect"]
+custom_minimum_size = Vector2(240, 30)
+layout_mode = 2
+offset_left = 67.0
+offset_top = 1.0
+offset_right = 307.0
+offset_bottom = 31.0
+theme_override_colors/background_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.788235, 0.8, 0.815686, 1)
+theme_override_font_sizes/font_size = 12
+placeholder_text = "请输入身份码"
+
+[node name="ButtonCodeInputCleanBtn" type="Button" parent="Background/VBoxContainer/CenterContainer2/TextureRect"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 0
+offset_left = 285.0
+offset_top = 9.0
+offset_right = 300.0
+offset_bottom = 24.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ap4c0")
+icon = ExtResource("3_laopr")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CenterContainer3" type="CenterContainer" parent="Background/VBoxContainer"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Background/VBoxContainer/CenterContainer3"]
+custom_minimum_size = Vector2(310, 30)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background/VBoxContainer/CenterContainer3/ColorRect"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 12.0
+texture = ExtResource("4_bju1p")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Background/VBoxContainer/CenterContainer3/ColorRect"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = -1.0
+offset_right = 155.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(0.788235, 0.8, 0.815686, 1)
+theme_override_font_sizes/font_size = 10
+text = "在获取推流地址处可获取身份码"
+
+[node name="ToGetCodeBtn" type="Button" parent="Background/VBoxContainer/CenterContainer3/ColorRect"]
+layout_mode = 2
+offset_left = 280.0
+offset_right = 310.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(1, 0.4, 0.6, 1)
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ohpp5")
+text = "去获取"
+
+[node name="CenterContainer4" type="CenterContainer" parent="Background/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="StartBtn" type="Button" parent="Background/VBoxContainer/CenterContainer4"]
+custom_minimum_size = Vector2(119, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_6mv28")
+text = "开启玩法"
+
+[node name="水印（我就爱写中文）" type="TextureRect" parent="Background"]
+custom_minimum_size = Vector2(132, 126)
+layout_mode = 0
+offset_top = 160.0
+offset_right = 132.0
+offset_bottom = 286.0
+texture = ExtResource("6_2sbuy")
+expand_mode = 1
