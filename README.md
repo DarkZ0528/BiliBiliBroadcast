@@ -43,4 +43,4 @@
 
 **如果你觉得插件还行，可以请我喝杯咖啡吗？**
 
-![请我喝杯咖啡](https://github.com/DarkZ0528/BiliBiliBroadcast/blob/main/buy%20me%20a%20coffee.jpg?raw=true =100x)
+<img src="https://github.com/DarkZ0528/BiliBiliBroadcast/blob/main/buy%20me%20a%20coffee.jpg?raw=true" width="300"/>
